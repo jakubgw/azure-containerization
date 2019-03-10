@@ -1,7 +1,6 @@
-az login
+. "../setupVariables.ps1"
 
-$myResourceGroup = "docker-test-resource-group"
-$k8sClusterName = 'jgcluster'
+az login
 
 echo "Create cluster"
 az aks create `

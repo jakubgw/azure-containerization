@@ -1,8 +1,8 @@
+# Before run createRegister.ps1 - it will create resource group and push image the ACR 
+. "../setupVariables.ps1"
+
 az login
 
-$myResourceGroup = "docker-test-resource-group"
-$containerRegistry= "jgcontainerregister"
-$k8sClusterName = 'jgcluster'
 
 echo "Configure Azure Kubectl"
 az aks install-cli
@@ -28,11 +28,13 @@ echo "Log into kubectl"
 az aks get-credentials --resource-group $myResourceGroup --name $k8sClusterName
 
 echo "Apply k8s configuration"
-# kubectl apply -f ./deployment.yaml
-# kubectl apply -f ./service.yaml
+kubectl apply -f ./deployment.yaml
+kubectl apply -f ./service.yaml
 
+echo "Check services"
 kubectl get service 
 # kubectl get service --watch
 
+echo "Check pods"
 
 

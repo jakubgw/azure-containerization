@@ -1,13 +1,9 @@
+. "./setupVariables.ps1"
+
 az login
 
-
-$myResourceGroup = "docker-test-resource-group"
-$containerRegistry= "jgcontainerregister"
-$dockerImageName= "docker-test-azure"
-$containerRegistryServer= "jgcontainerregister.azurecr.io"
-
 echo "Creating resource group"
-az group create --name $myResourceGroup --location eastus
+az group create --name $myResourceGroup --location westeurope
 
 echo "Building image"
 docker build -t $dockerImageName -f ./DockerTest/DockerTest/Dockerfile ./DockerTest/DockerTest

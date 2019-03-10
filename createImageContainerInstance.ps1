@@ -1,12 +1,8 @@
+# Before run createRegister.ps1 - it will create resource group and push image the ACR 
+
+. "./setupVariables.ps1"
+
 az login
-
-$myResourceGroup = "docker-test-resource-group"
-
-$containerName= "container-instance-test"
-$dnsName= "container-instance-test"
-$dockerImageName= "docker-test-azure"
-$containerRegistry= "jgcontainerregister"
-$containerRegistryServer= "jgcontainerregister.azurecr.io"
 
 echo "ACR login"
 az acr login --name $containerRegistry
@@ -36,5 +32,5 @@ az container show `
     --query "{FQDN:ipAddress.fqdn,ProvisioningState:provisioningState}" `
     --out table
 
-echo "Calling $dnsName.eastus.azurecontainer.io/api/dockertest"
-Invoke-WebRequest -Uri "$dnsName.eastus.azurecontainer.io/api/dockertest"
+echo "Calling $dnsName.westeurope.azurecontainer.io/api/dockertest"
+Invoke-WebRequest -Uri "$dnsName.westeurope.azurecontainer.io/api/dockertest"
