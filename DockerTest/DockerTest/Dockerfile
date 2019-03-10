@@ -1,4 +1,7 @@
 FROM microsoft/dotnet:2.1-aspnetcore-runtime AS base
+
+LABEL mainteiner="jakub.gwozdz@avanade.com"
+
 WORKDIR /app
 EXPOSE 63374
 EXPOSE 44300

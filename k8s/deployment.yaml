@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: k8s-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-test
+  template:
+    metadata:
+      labels:
+        app: k8s-test
+    spec:
+      containers:
+      - image: jgcontainerregister.azurecr.io/docker-test-azure:v1
+        name: k8s-test
+        ports:
+        - containerPort: 80
+        securityContext:
+         privileged: true
+        imagePullPolicy: "Always" 
