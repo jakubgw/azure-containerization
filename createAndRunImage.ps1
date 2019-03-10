@@ -21,3 +21,4 @@ Invoke-WebRequest -Uri "http://localhost:3000/api/dockertest"
 # docker ps -a | grep 447ea97aa351
 # docker rm 447ea97aa351
 # docker rmi docker-test-azure
+# docker run -p 3000:80  -v "$(pwd):/testdir"  -d docker-test-azure
