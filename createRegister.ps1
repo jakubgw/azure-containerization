@@ -25,12 +25,10 @@ docker rmi $containerRegistryServer/$dockerImageName`:v1
 docker rmi $dockerImageName
 
 echo "Runing image from ACR"
-docker run -p 3000:80 -d  $containerRegistryServer/$dockerImageName`:v1
+docker run -p 3010:80 -d  $containerRegistryServer/$dockerImageName`:v1
 
 
-echo "Calling http://localhost:3000/api/dockertest"
-
-Invoke-WebRequest -Uri "http://localhost:3000/api/dockertest"
+echo "Calling http://localhost:3010/api/dockertest"
 
 # docker ps
 # docker stop 447ea97aa351

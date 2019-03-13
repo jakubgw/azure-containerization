@@ -14,7 +14,6 @@ docker ps
 
 echo "Calling http://localhost:3000/api/dockertest"
 
-Invoke-WebRequest -Uri "http://localhost:3000/api/dockertest"
 
 # docker exec -it 447ea97aa351 bash
 # docker stop 447ea97aa351

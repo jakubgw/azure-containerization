@@ -10,7 +10,7 @@ $env:path += 'C:\Users\jakub.gwozdz\.azure-kubectl'
 
 echo " Get the id of the service principal configured for AKS"
 $clientId = az aks show `
- --resource-group $myResourceGroup `
+ --resource-group $k8sResourceGroup `
  --name $k8sClusterName `
  --query "servicePrincipalProfile.clientId" `
  --output tsv
@@ -25,7 +25,7 @@ echo "Create role assignment"
 az role assignment create --assignee $clientId --role acrpull --scope $acrId
 
 echo "Log into kubectl"
-az aks get-credentials --resource-group $myResourceGroup --name $k8sClusterName
+az aks get-credentials --resource-group $k8sResourceGroup --name $k8sClusterName
 
 echo "Apply k8s configuration"
 kubectl apply -f ./deployment.yaml

@@ -2,9 +2,10 @@
 
 az login
 
+az group create --name $k8sResourceGroup --location westeurope
 echo "Create cluster"
 az aks create `
-    --resource-group $myResourceGroup `
+    --resource-group $k8sResourceGroup `
     --name $k8sClusterName `
     --node-count 1 `
     --enable-addons monitoring `
@@ -16,7 +17,7 @@ az aks install-cli
 $env:path += 'C:\Users\jakub.gwozdz\.azure-kubectl'
 
 echo "Log into Kubectl"
-az aks get-credentials --resource-group $myResourceGroup --name $k8sClusterName
+az aks get-credentials --resource-group $k8sResourceGroup --name $k8sClusterName
 
 echo "list nodes "
 kubectl get nodes

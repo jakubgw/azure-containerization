@@ -32,5 +32,4 @@ az container show `
     --query "{FQDN:ipAddress.fqdn,ProvisioningState:provisioningState}" `
     --out table
 
-echo "Calling $dnsName.westeurope.azurecontainer.io/api/dockertest"
-Invoke-WebRequest -Uri "$dnsName.westeurope.azurecontainer.io/api/dockertest"
+echo " $dnsName.westeurope.azurecontainer.io/api/dockertest running"

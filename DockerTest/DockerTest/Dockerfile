@@ -7,7 +7,7 @@ EXPOSE 63374
 EXPOSE 44300
 
 FROM microsoft/dotnet:2.1-sdk AS build
-Add . /src
+ADD . /src
 COPY ["DockerTest.csproj", "DockerTest/"]
 RUN dotnet restore "DockerTest/DockerTest.csproj"
 
