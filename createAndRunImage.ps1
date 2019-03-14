@@ -21,3 +21,7 @@ echo "Calling http://localhost:3000/api/dockertest"
 # docker rm 447ea97aa351
 # docker rmi docker-test-azure
 # docker run -p 3000:80  -v "$(pwd):/testdir"  -d docker-test-azure
+
+# docker stop $(docker ps -a -q)
+# docker rm $(docker ps -a -q)
+# docker rmi $(docker images -q)

@@ -13,7 +13,7 @@ spec:
         app: k8s-test
     spec:
       containers:
-      - image: jgcontainerregister.azurecr.io/docker-test-azure:v1
+      - image: jgcontainerregistersecond.azurecr.io/docker-test-azure-second:v1
         name: k8s-test
         ports:
         - containerPort: 80

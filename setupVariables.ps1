@@ -1,14 +1,14 @@
 
-$myResourceGroup = "docker-test-resource-group"
-$k8sResourceGroup = "k8s-test-resource-group-first"
+$myResourceGroup = "docker-test-resource-group-second"
+$k8sResourceGroup = "k8s-test-resource-group-second"
 
 
-$containerName= "container-instance-test"
-$dnsName= "container-instance-test"
+$containerName= "container-instance-test-second"
+$dnsName= "container-instance-test-second"
 
-$dockerImageName= "docker-test-azure"
+$dockerImageName= "docker-test-azure-second"
 
-$containerRegistry= "jgcontainerregister"
-$containerRegistryServer= "jgcontainerregister.azurecr.io"
+$containerRegistry= "jgcontainerregistersecond"
+$containerRegistryServer= "$containerRegistry.azurecr.io"
 
-$k8sClusterName = 'jgcluster-test-first'
+$k8sClusterName = 'jgcluster-test-second'

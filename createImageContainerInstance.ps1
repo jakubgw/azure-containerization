@@ -32,4 +32,4 @@ az container show `
     --query "{FQDN:ipAddress.fqdn,ProvisioningState:provisioningState}" `
     --out table
 
-echo " $dnsName.westeurope.azurecontainer.io/api/dockertest running"
+echo "http://$dnsName.westeurope.azurecontainer.io/api/dockertest running"

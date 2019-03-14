@@ -38,3 +38,4 @@ kubectl get service
 echo "Check pods"
 
 
+# kubectl exec -it k8s-test-78556cc589-r267f     -- sh
